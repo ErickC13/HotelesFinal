@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+    <meta charset="UTF-8">
+    <title>Hoteles Guatemala</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script>
+        let registrado = false;
+
+        function mostrarSeccion(id) {
+            const secciones = document.querySelectorAll("section");
+            secciones.forEach(seccion => seccion.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+        }
+
+        function registrarUsuario(e) {
+            e.preventDefault();
+            registrado = true;
+            alert("¡Registro exitoso!");
+            mostrarSeccion('inicio');
+        }
+
+        function verMapa(ubicacion) {
+            const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ubicacion)}`;
+            window.open(url, '_blank');
+        }
+
+        function solicitarRegistro(siRegistrado, mensaje) {
+            if (!siRegistrado) {
+                alert(mensaje);
+                mostrarSeccion('registro');
+            } else {
+                alert("Mostrando detalles...");
+            }
+        }
+
+        window.onload = function () {
+            mostrarSeccion('inicio');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hoteles Guatemala</h1>
+        <p>Hospédate en los mejores destinos del país</p>
+    </header>
+
+    <nav>
+        <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+        <a href="#" onclick="mostrarSeccion('registro')">Registro</a>
+        <a href="#" onclick="mostrarSeccion('Turismo')">Turismo</a>
+        <a href="#" onclick="mostrarSeccion('paquetes')">Paquetes</a>
+        <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
+        <a href="#" onclick="mostrarSeccion('ubicacion')">Ubicación</a>
+    </nav>
+
+    <main>
+        <section id="inicio" class="active">
+            <div class="contenedor-seccion">
+                <h2>Ofertas especiales</h2>
+                <div class="hotel-list">
+                    <div class="hotel-card">
+                        <h3>Tikal Futura Hotel</h3>
+                        <p>900 USD por noche</p>
+                        <img src="https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Antigua Guatemala" width="200">
+                        <p>Disponible</p>
+                        <button onclick="solicitarRegistro(registrado, 'Debe registrarse para ver los detalles del hotel.')">Ver detalles</button>
+                    </div>
+                    <div class="hotel-card">
+                        <h3>Guatemala</h3>
+                        <p>100 USD por noche</p>
+                        <img src="https://images.unsplash.com/photo-1649957101531-7dca6c97700b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Atitlán" width="200">
+                        <p>Disponible</p>
+                        <button onclick="solicitarRegistro(registrado, 'Debe registrarse para ver los detalles del hotel.')">Ver detalles</button>
+                    </div>
+                    <div class="hotel-card">
+                        <h3>Intercontinental</h3>
+                        <p>800 USD por noche</p>
+                        <img src="https://images.unsplash.com/photo-1665986127994-00f974136c7d?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Livingston" width="200">
+                        <p>No disponible</p>
+                        <button onclick="solicitarRegistro(registrado, 'Debe registrarse para ver los detalles del hotel.')">Ver detalles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <section id="registro">
+    <div class="contenedor-seccion">
+        <h2>Registro de Usuarios</h2>
+        <form class="registro-form" onsubmit="registrarUsuario(event)">
+            <label>
+                Nombre completo:
+                <input type="text" name="nombre" required>
+            </label>
+            <label>
+                Correo electrónico:
+                <input type="email" name="email" required>
+            </label>
+            <label>
+                Contraseña:
+                <input type="password" name="password" required>
+            </label>
+            <input type="submit" value="Registrarse" class="btn-registrarse">
+        </form>
+    </div>
+</section>
+
+<!-- turismo-->
+<section id="Turismo">
+  <div class="contenedor-seccion">
+    <h2>🌎 Turismo en Guatemala</h2>
+
+    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/3a/91/f8/lake-atitlan.jpg?w=1200&h=1200&s=1" alt="Lago Atitlán" style="width: 300px; border-radius: 15px; margin-right: 20px;">
+      <p>Guatemala es un país lleno de cultura, historia y paisajes naturales asombrosos. Desde el impresionante <strong>Lago de Atitlán</strong>, rodeado de volcanes y pueblos mayas, hasta las ruinas milenarias de <strong>Tikal</strong>, cada rincón ofrece una experiencia inolvidable. La calidez de su gente y su riqueza cultural hacen de Guatemala un destino turístico único en América Central.</p>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <p>La <strong>Antigua Guatemala</strong> es uno de los tesoros coloniales más hermosos del continente. Sus calles empedradas, iglesias barrocas y coloridas fachadas atraen a miles de turistas cada año. Esta ciudad, declarada Patrimonio de la Humanidad por la UNESCO, es también un centro cultural con festivales, gastronomía y artesanías tradicionales.</p>
+      <img src="https://pohcdn.com/sites/default/files/styles/paragraph__live_banner__lb_image__1880bp/public/live_banner/Antigua-Guatemala.jpg" alt="Antigua Guatemala" style="width: 300px; border-radius: 15px; margin-left: 20px;">
+    </div>
+
+    <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+      <img src="https://westportbrewing.com/wp-content/uploads/2020/12/tikal-ruinas-mayas.jpg" alt="Ruinas de Tikal" style="width: 300px; border-radius: 15px; margin-right: 20px;">
+      <p>El norte del país, especialmente <strong>Petén</strong>, es el hogar de los vestigios de la civilización maya. Las <strong>ruinas de Tikal</strong>, con sus templos que se alzan sobre la selva, ofrecen una conexión profunda con el pasado. Esta región también es ideal para los amantes de la naturaleza, gracias a su biodiversidad y parques protegidos.</p>
+    </div>
+
+    <div style="display: flex; align-items: center;">
+      <p>Para los aventureros, lugares como <strong>Semuc Champey</strong> y las cuevas de <strong>Lanquín</strong> ofrecen paisajes espectaculares y actividades como senderismo, rafting o exploración subterránea. Guatemala combina perfectamente la aventura, la cultura y el descanso, posicionándose como uno de los destinos emergentes más atractivos del mundo.</p>
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/47/f5/0b/view-from-the-water.jpg?w=1200&h=1200&s=1" alt="Semuc Champey" style="width: 300px; border-radius: 15px; margin-left: 20px;">
+    </div>
+  </div>
+</section>
+
+
+<section id="ubicacion">
+        <div class="contenedor-seccion">
+            <h2>Ubicación de los hoteles</h2>
+            <div class="mapa-contenedor">
+                <div class="mapa">
+                    <h3>Tikal Futura Hotel</h3>
+                    <iframe src="https://www.google.com/maps?q=Tikal+Futura+Hotel,+Guatemala&output=embed" loading="lazy"></iframe>
+                </div>
+                <div class="mapa">
+                    <h3>Guatemala</h3>
+                    <iframe src="https://www.google.com/maps?q=Hotel+Atitlan,+Sololá,+Guatemala&output=embed" loading="lazy"></iframe>
+                </div>
+                <div class="mapa">
+                    <h3>Intercontinental</h3>
+                    <iframe src="https://www.google.com/maps?q=Hotel+Real+Intercontinental+Guatemala&output=embed" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="contacto">
+  <div class="contenedor-seccion">
+    <h2>📞 Contáctanos</h2>
+    <p>¿Tienes preguntas o deseas reservar? ¡Estamos aquí para ayudarte! Ponte en contacto con nosotros a través de nuestras redes sociales o envíanos un mensaje. 💬</p>
+
+    <div class="redes-sociales">
+      <a href="https://www.facebook.com/" target="_blank" class="btn-red-social facebook">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="btn-red-social instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://wa.me/50212345678" target="_blank" class="btn-red-social whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <a href="#ubicacion" class="btn-contacto">📍 Ver ubicaciones</a>
+  </div>
+</section>
+
+
+<section id="paquetes">
+  <div class="contenedor-seccion">
+    <h2>🏝️ Paquetes turísticos</h2>
+    <p>Descubre lo mejor de Guatemala con nuestros paquetes personalizados. Vive la cultura, naturaleza y hospitalidad única que ofrecemos. ✨</p>
+
+    <div class="contenedor-paquetes">
+      <div class="tarjeta-paquete">
+        <h3>🌄 Volcán de Pacaya</h3>
+        <ul>
+          <li>3 noches en hotel con desayuno incluido</li>
+          <li>Tour guiado por el centro histórico</li>
+          <li>Visita al Volcán de Pacaya</li>
+          <li>Traslados incluidos</li>
+        </ul>
+        <span class="duracion">Duración: 4 días / 3 noches</span>
+        <a href="#contacto" class="btn-paquete">Reservar ahora</a>
+      </div>
+
+      <div class="tarjeta-paquete">
+        <h3>🌊 Encanto de Semuc Champey</h3>
+        <ul>
+          <li>4 noches en hotel boutique frente al lago</li>
+          <li>Tour en lancha a pueblos mayas (San Juan, Santiago)</li>
+          <li>Clases de chocolate artesanal</li>
+          <li>Desayuno incluido</li>
+        </ul>
+        <span class="duracion">Duración: 5 días / 4 noches</span>
+        <a href="#contacto" class="btn-paquete">Reservar ahora</a>
+      </div>
+
+      <div class="tarjeta-paquete">
+        <h3>🌿 Tikal y Mundo Maya</h3>
+        <ul>
+          <li>5 noches en hotel ecológico en Petén</li>
+          <li>Ingreso y tour guiado a Tikal</li>
+          <li>Visita a Yaxhá y cuevas sagradas</li>
+          <li>Desayuno y almuerzo incluidos</li>
+        </ul>
+        <span class="duracion">Duración: 6 días / 5 noches</span>
+        <a href="#contacto" class="btn-paquete">Reservar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+       
+    </main>
+
+
+
+
+<footer class="footer-imagen" id="footer">
+  <div class="contenedor-footer">
+    <div class="footer-logo">
+      <h3>Mayamela, agencia de hoteles y planes turisticos</h3>
+      <p>Tu refugio en el corazón de Guatemala.</p>
+    </div>
+
+    <div class="footer-enlaces">
+      <h4>Enlaces Rápidos</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#ubicacion">Ubicación</a></li>
+        <li><a href="#paquetes">Paquetes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-redes">
+      <h4>Redes Sociales</h4>
+      <div class="iconos-redes">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/50200000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-abajo">
+    <p>&copy; Mayamela. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+
+
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/50200000000" class="whatsapp-float" target="_blank" title="Contáctanos por WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
