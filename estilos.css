@@ -1,0 +1,474 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('https://images.unsplash.com/photo-1517243444271-c23f4d0834c1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2em;
+    text-align: center;
+}
+
+nav {
+    background-color: #004c99;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    padding: 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #0059b3;
+}
+
+main {
+    flex: 1;
+    padding: 2em;
+    min-height: 600px;
+}
+
+section {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+h2 {
+    color: #0066cc;
+}
+
+.hotel-card {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    width: 250px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.hotel-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.calendar div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.unavailable {
+    background-color: #f88;
+}
+
+.available {
+    background-color: #8f8;
+}
+
+.contenedor-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio h2 {
+    margin-bottom: 20px;
+}
+
+
+.hotel-card button {
+    background-color: #007BFF; /* Azul profesional */
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-card button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/*¨registro */
+
+.registro-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.registro-form label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-form input[type="text"],
+.registro-form input[type="email"],
+.registro-form input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.registro-form input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.btn-registrarse {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-registrarse:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Estilo mejorado para la sección de ubicación */
+#ubicacion {
+    background: linear-gradient(to bottom right, #f0f8ff, #e6f2ff);
+    padding: 60px 20px;
+}
+
+#ubicacion h2 {
+    font-size: 2em;
+    color: #004c99;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 76, 153, 0.2);
+}
+
+.mapa-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.mapa {
+    flex: 1 1 300px;
+    max-width: 400px;
+    background: linear-gradient(to top right, #ffffff, #f7fbff);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.mapa h3 {
+    font-size: 1.2em;
+    color: #004c99;
+    margin-bottom: 15px;
+    text-transform:none;
+    letter-spacing: 1px;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 10px;
+}
+
+/* Sección de Contacto */
+#contacto {
+    background: linear-gradient(to top right, #eaf6ff, #ffffff);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 2em;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+#contacto p {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.redes-sociales {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.btn-red-social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-red-social i {
+    font-size: 1.2em;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.instagram {
+    background-color: #e1306c;
+}
+
+.whatsapp {
+    background-color: #25d366;
+}
+
+.btn-red-social:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contacto {
+    display: inline-block;
+    background-color: #004c99;
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-contacto:hover {
+    background-color: #003366;
+}
+
+
+/* Sección de Paquetes */
+#paquetes {
+    background-color: #f4faff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#paquetes h2 {
+    font-size: 2.2em;
+    color: #003366;
+    margin-bottom: 10px;
+}
+
+#paquetes p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #333;
+}
+
+.contenedor-paquetes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.tarjeta-paquete {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-paquete:hover {
+    transform: translateY(-5px);
+}
+
+.tarjeta-paquete h3 {
+    font-size: 1.3em;
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+.tarjeta-paquete ul {
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.tarjeta-paquete ul li {
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.duracion {
+    display: block;
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.btn-paquete {
+    display: inline-block;
+    background-color: #004c99;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-paquete:hover {
+    background-color: #003366;
+}
+
+/*footer*/
+
+footer {
+    font-family: "Encode Sans", sans-serif;
+}
+
+.footer-imagen {
+    background: url('https://images.unsplash.com/photo-1592229506179-7995edeb6226?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    color: white;
+    padding: 50px 20px 20px 20px;
+    position: relative;
+}
+
+.footer-imagen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* oscurece la imagen */
+    z-index: 0;
+}
+
+.contenedor-footer, .footer-abajo {
+    position: relative;
+    z-index: 1;
+}
+
+.contenedor-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-enlaces h4,
+.footer-redes h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.footer-enlaces ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-enlaces ul li {
+    margin-bottom: 8px;
+}
+
+.footer-enlaces ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-enlaces ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.iconos-redes a {
+    color: #ccc;
+    font-size: 1.6em;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.iconos-redes a:hover {
+    color: #fff;
+}
+
+.footer-abajo {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    color: #ccc;
+}
